@@ -1,11 +1,19 @@
-import React from 'react'
+import { motion } from 'framer-motion';
+import React from 'react';
+
+import LogoIcon from './LogoIcon';
 
 const Header = () => {
   return (
-    <div className="navbar bg-white text-black z-50">
+    <div className="navbar bg-white text-black shadow-lg mb-4">
       <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+        <LogoIcon className="hidden lg:inline-block" />
+        <div className="dropdown drawer-button">
+          <label
+            htmlFor="my-drawer"
+            tabIndex={0}
+            className="btn btn-ghost lg:hidden drawer-button"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -55,7 +63,6 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
@@ -95,17 +102,13 @@ const Header = () => {
           <li>
             <a className="hover:bg-transparent ">Item 3</a>
           </li>
-          <a href="#" className="group text-sky-600 transition duration-300">
-            Link
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
-          </a>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Get started</a>
+        <LogoIcon className="lg:hidden" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

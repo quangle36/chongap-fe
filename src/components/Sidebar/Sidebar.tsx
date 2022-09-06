@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { commonStrings } from 'translation/vi';
 
 import Footer from 'components/Footer';
 
@@ -23,8 +24,12 @@ const Sidebar = () => {
           <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content mb-0">
             <p className="text-main-blue font-bold">Vạn Phúc Thịnh</p>
             <div className="flex justify-around pt-2">
-              <p className="text-main-blue font-bold">Đăng nhập</p>
-              <p className="text-main-blue font-bold">Đăng kí</p>
+              <a href="/signin" className="text-main-blue font-bold">
+                {commonStrings.signIn}
+              </a>
+              <a href="/register" className="text-main-blue font-bold">
+                {commonStrings.signUp}
+              </a>
             </div>
             <li>
               <a>Sidebar Item 1</a>

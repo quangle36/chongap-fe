@@ -10,11 +10,11 @@ import HeaderMenu from './SidebarMenu';
 const Sidebar = () => {
   return (
     <>
-      <div className="drawer">
+      <div className="drawer ">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
+        <div className="drawer-content flex flex-col">
           <Header />
-          <main className={'flex-auto lg:mx-0 h-screen'}>
+          <main className={'grow lg:mx-0'}>
             <Outlet />
           </main>
           <Footer />

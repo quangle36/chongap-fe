@@ -1,8 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+/* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line no-undef
+const { fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ['SVN Gilroy', ...fontFamily.sans],
+        'SVN-Gilroy': 'SVN Gilroy',
+        'UTM-Avo': 'UTM Avo',
+        'SVN-Cintra': 'SVN Cintra',
+      },
       colors: {
         'dark-purple': ' #242038ff',
         'slate-blue': ' #725ac1ff',
@@ -20,6 +29,9 @@ module.exports = {
         'hint-of-red': '#F9F7F7',
         'card-title': '#E03C31',
         'main-blue': '#4487C7',
+        'google-red': '#EA4335',
+        'facebook-blue': '#3B5998',
+        concrete: '#F2F2F2',
       },
     },
   },

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { commonStrings } from 'translation/vi';
+import { regex } from 'utils/regex';
 
-import { regex, style } from './style';
+import { style } from './style';
 
 const Register = () => {
   const {
@@ -15,7 +16,7 @@ const Register = () => {
 
   return (
     <div className="flex flex-col w-full h-full  items-center">
-      <h1 className="text-3xl mb-4">{commonStrings.signUp}</h1>
+      <h1 className="text-3xl mb-4 font-SVN-Gilroy">{commonStrings.signUp}</h1>
       <form
         onSubmit={handleSubmit(data => {
           alert(JSON.stringify(data));
@@ -89,7 +90,7 @@ const Register = () => {
           {errors.password?.message}
         </span>
         <button
-          className="btn btn-primary w-80 text-white rounded-xl mt-4"
+          className="btn bg-main-blue border-none w-80 text-white rounded-xl mt-4"
           onClick={handleSubmit(data => {
             alert(JSON.stringify(data));
           })}

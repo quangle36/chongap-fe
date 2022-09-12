@@ -4,7 +4,7 @@ import React from 'react';
 function About() {
   return (
     <div>
-      <button className="btn">Quang1</button>
+      <button className='btn'>Quang1</button>
     </div>
   );
 }

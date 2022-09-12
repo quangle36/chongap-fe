@@ -126,7 +126,7 @@ const items: MenuProps['items'] = [
   },
   {
     label: (
-      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+      <a href='https://ant.design' target='_blank' rel='noopener noreferrer'>
         Navigation Four - Link
       </a>
     ),
@@ -137,7 +137,7 @@ const items: MenuProps['items'] = [
 const HeaderMenu = () => {
   const [current, setCurrent] = useState('mail');
 
-  const onClick: MenuProps['onClick'] = e => {
+  const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);
     setCurrent(e.key);
   };
@@ -146,9 +146,9 @@ const HeaderMenu = () => {
     <Menu
       onClick={onClick}
       selectedKeys={[current]}
-      mode="inline"
+      mode='inline'
       items={items}
-      className="w-60"
+      className='w-60'
     />
   );
 };

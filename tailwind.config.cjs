@@ -1,6 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-/* eslint-disable @typescript-eslint/no-var-requires */
-// eslint-disable-next-line no-undef
 const { fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],

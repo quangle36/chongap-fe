@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tsconfigPaths from 'vite-tsconfig-paths'
-import * as path from 'path'
-import { resolve } from 'path'
-import vitePluginImp from 'vite-plugin-imp'
+import react from '@vitejs/plugin-react';
+import * as path from 'path';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import vitePluginImp from 'vite-plugin-imp';
+import tsconfigPaths from 'vite-tsconfig-paths';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -13,7 +14,7 @@ export default defineConfig({
       libList: [
         {
           libName: 'antd',
-          style: name => `antd/es/${name}/style`,
+          style: (name) => `antd/es/${name}/style`,
         },
       ],
     }),
@@ -31,4 +32,4 @@ export default defineConfig({
       'tailwind.config.js': path.resolve(__dirname, 'tailwind.config.js'),
     },
   },
-})
+});

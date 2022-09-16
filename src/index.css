@@ -1,3 +1,103 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+      font-family: 'SVN Gilroy';
+      src: local('SVN Gilroy'), local('SVN-Gilroy'),
+        url('/fonts/svn-gilroy/SVN-Gilroy Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'SVN Gilroy';
+      src: local('SVN Gilroy'), local('SVN-Gilroy'),
+        url('/fonts/svn-gilroy/SVN-Gilroy Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'SVN Gilroy';
+      src: local('SVN Gilroy'), local('SVN-Gilroy'),
+        url('/fonts/svn-gilroy/SVN-Gilroy Bold.ttf') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'SVN Cintra';
+      src: local('SVN Cintra'), local('SVN-Cintra'),
+        url('/fonts/svn-cintra/SVN-Cintra.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'UTM Avo';
+      src: local('UTM Avo'), local('UTM Avo'),
+        url('/fonts/utm-avo/UTM Avo.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'UTM Avo';
+      src: local('UTM Avo'), local('UTM Avo'),
+        url('/fonts/utm-avo/UTM AvoBold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+  
+    .cursor-newtab {
+      cursor: url('/images/new-tab.png') 10 10, pointer;
+    }
+  
+    /* #region  /**=========== Typography =========== */
+    .h0 {
+      @apply font-primary text-3xl font-bold md:text-5xl;
+    }
+  
+    h1,
+    .h1 {
+      @apply font-primary text-2xl font-bold md:text-4xl;
+    }
+  
+    h2,
+    .h2 {
+      @apply font-primary text-xl font-bold md:text-3xl;
+    }
+  
+    h3,
+    .h3 {
+      @apply font-primary text-lg font-bold md:text-2xl;
+    }
+  
+    h4,
+    .h4 {
+      @apply font-primary text-base font-bold md:text-lg;
+    }
+  
+    body,
+    .p {
+      @apply font-primary text-sm md:text-base;
+    }
+    /* #endregion  /**======== Typography =========== */
+  
+    .layout {
+      /* 1100px */
+      max-width: 68.75rem;
+      @apply mx-auto w-11/12;
+    }
+  
+    .bg-dark a.custom-link {
+      @apply border-gray-200 hover:border-gray-200/0;
+    }
+  
+    /* Class to adjust with sticky footer */
+    .min-h-main {
+      @apply min-h-[calc(100vh-56px)];
+    }
+  }

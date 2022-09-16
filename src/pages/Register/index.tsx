@@ -24,8 +24,8 @@ const Register = () => {
       >
         <input
           {...register('username', {
-            required: 'Xin hãy nhập tên đăng nhập',
-            maxLength: 10,
+            required: 'Xin hãy nhập họ tên',
+            maxLength: 30,
             pattern: {
               value: regex.username,
               message: 'Tên không hợp lệ',
@@ -34,7 +34,7 @@ const Register = () => {
           className={`${style.input}  ${
             errors.username ? 'focus:border-red-600 focus:outline-none ' : ''
           }`}
-          placeholder='Tên đăng nhập*'
+          placeholder='Tên hiển thị*'
         />
         <span className={`${style.errorMessage}`}>
           {errors.username?.message as React.ReactNode}

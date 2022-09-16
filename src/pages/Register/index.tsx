@@ -1,5 +1,5 @@
 import { style } from './style';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { commonStrings } from 'translation/vi';
 import { regex } from 'utils/regex';
@@ -37,7 +37,7 @@ const Register = () => {
           placeholder='Tên đăng nhập*'
         />
         <span className={`${style.errorMessage}`}>
-          {errors.username?.message}
+          {errors.username?.message as React.ReactNode}
         </span>
         <input
           {...register('email', {
@@ -53,7 +53,9 @@ const Register = () => {
           placeholder='Email*'
         />
 
-        <span className={`${style.errorMessage}`}>{errors.email?.message}</span>
+        <span className={`${style.errorMessage}`}>
+          {errors.email?.message as React.ReactNode}
+        </span>
         <input
           {...register('phoneNumber', {
             required: 'Xin hãy nhập số điện thoại',
@@ -69,7 +71,7 @@ const Register = () => {
           placeholder='Điện thoại*'
         />
         <span className={`${style.errorMessage}`}>
-          {errors.phoneNumber?.message}
+          {errors.phoneNumber?.message as React.ReactNode}
         </span>
         <input
           {...register('password', {
@@ -86,7 +88,7 @@ const Register = () => {
           type={passwordShown ? 'text' : 'password'}
         />
         <span className={`${style.errorMessage}`}>
-          {errors.password?.message}
+          {errors.password?.message as React.ReactNode}
         </span>
         <button
           className='mt-4 text-white border-none btn bg-main-blue w-80 rounded-xl'

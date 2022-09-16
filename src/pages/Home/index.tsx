@@ -22,7 +22,7 @@ function Home() {
         Bán tổng hợp quỹ căn Vinhomes Smart City từ 1 phòng ngủ đến 3 phòng ngủ, kí trực tiếp chủ đầu tư, quỹ căn trong đại đô thị Vinhomes Smart City giá tốt nhất thị trường...* Chỉ từ 200 triệu, quý khách ...
     '
       />
-      <UnderlineLink title='hello' href='aaa' />
+      <UnderlineLink title='hello' />
     </div>
   );
 }

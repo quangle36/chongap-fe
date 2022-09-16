@@ -42,7 +42,7 @@ const SignIn = () => {
             placeholder='Tên đăng nhập*'
           />
           <span className={`${style.errorMessage}`}>
-            {errors.username?.message}
+            {errors.username?.message as React.ReactNode}
           </span>
           <input
             {...register('password', {
@@ -59,7 +59,7 @@ const SignIn = () => {
             type={passwordShown ? 'text' : 'password'}
           />
           <span className={`${style.errorMessage}`}>
-            {errors.password?.message}
+            {errors.password?.message as React.ReactNode}
           </span>
           <button
             className='btn bg-main-blue w-80 text-white rounded-xl mt-4 border-none'

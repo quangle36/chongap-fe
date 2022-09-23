@@ -1,11 +1,23 @@
 import CardProduct from 'components/CardProduct';
 import UnderlineLink from 'components/UnderlineLink';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import UserService from 'services/userService';
 
 function Home() {
+
+  const [user, setUser] = useState<{} | null>(null);
+  
+  const login = () => {
+    UserService.login('hai@gmail.com', '123456').then((response) => {
+      setUser(response.data);
+    });
+  };
+
   return (
     <div>
       <h1>This is the home page</h1>
+      Button to login <button onClick={login}>Login</button>
       <Link className={''} to='/about'>
         Click to view our about page
       </Link>

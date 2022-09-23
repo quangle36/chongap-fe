@@ -3,6 +3,8 @@ import UnderlineLink from 'components/UnderlineLink';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  console.log(import.meta.env.VITE_API_ENDPOINT);
+
   return (
     <div>
       <h1>This is the home page</h1>

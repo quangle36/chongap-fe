@@ -14,7 +14,7 @@ const Register = () => {
   const [passwordShown, setPasswordShown] = useState(false);
 
   return (
-    <div className='flex flex-col items-center w-full h-full'>
+    <div className='w-full h-full flex flex-col items-center'>
       <h1 className='mb-4 text-3xl font-SVN-Gilroy'>{commonStrings.signUp}</h1>
       <form
         onSubmit={handleSubmit((data) => {

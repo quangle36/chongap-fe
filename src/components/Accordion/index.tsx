@@ -27,7 +27,7 @@ const Accordion = ({ title, children, onToggleActive, active }: Props) => {
             onToggleActive && onToggleActive();
           }}
         >
-          <motion.div className='text-lg font-bold'>{title}</motion.div>
+          <motion.div className='text-lg font-medium'>{title}</motion.div>
         </motion.div>
 
         {isOpen && (
@@ -41,7 +41,7 @@ const Accordion = ({ title, children, onToggleActive, active }: Props) => {
               },
             }}
             exit={{ opacity: 0 }}
-            className='p-2 text-lg text-gray-700  border-gray-300'
+            className='p-2 text-lg text-gray-700 border-gray-300'
           >
             {children}
           </motion.div>

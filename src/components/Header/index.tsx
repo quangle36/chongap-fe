@@ -1,7 +1,8 @@
 import LogoIcon from './LogoIcon';
+import { categories, standardDistrict } from 'components/Sidebar';
 import UnderlineLink from 'components/UnderlineLink';
 import { motion } from 'framer-motion';
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -30,19 +31,27 @@ const Header = () => {
             </svg>
           </label>
         </div>
-        <div className='dropdown dropdown-hover ml-8'>
-          <UnderlineLink title='Nhà đất Quận 10' />
-          <ul
-            tabIndex={0}
-            className='dropdown-content menu p-2 shadow bg-base-100 rounded-md w-52 text-sm'
-          >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-          </ul>
+        <div className='hidden lg:flex'>
+          {categories.map((category) => (
+            <div key={category.id} className='dropdown dropdown-hover ml-8'>
+              <UnderlineLink title={category.name} />
+              <ul
+                tabIndex={0}
+                className='dropdown-content menu p-2 shadow bg-base-100 rounded-md w-52 text-sm'
+              >
+                {category.subCategories.map((subCategoriesItem) => {
+                  const subCategoriesUrl = standardDistrict(subCategoriesItem);
+                  return (
+                    <li key={subCategoriesItem}>
+                      <Link to={`${category.url}/${subCategoriesUrl}`}>
+                        {subCategoriesItem}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
       <div className='navbar-center hidden lg:flex'></div>

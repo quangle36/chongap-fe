@@ -1,7 +1,7 @@
 import './App.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Layout from 'components/Layout';
-import Sidebar from 'components/Sidebar/Sidebar';
+import Sidebar from 'components/Sidebar';
 import { About, Contact, Home } from 'pages';
 import Register from 'pages/Register';
 import SignIn from 'pages/SignIn';

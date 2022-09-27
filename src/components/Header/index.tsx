@@ -3,12 +3,12 @@ import { categories, standardDistrict } from 'components/Sidebar';
 import UnderlineLink from 'components/UnderlineLink';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { commonStrings } from 'translation/vi';
 
 const Header = () => {
   return (
-    <div className='navbar bg-white text-black shadow-lg '>
-      <div className='navbar-start'>
-        <LogoIcon className='hidden lg:inline-block' />
+    <div className='navbar bg-white text-black shadow-lg lg:justify-center'>
+      <div className='navbar-start flex lg:hidden'>
         <div className='dropdown drawer-button'>
           <label
             htmlFor='my-drawer'
@@ -30,6 +30,13 @@ const Header = () => {
               />
             </svg>
           </label>
+        </div>
+      </div>
+      <div className='navbar-center'>
+        <LogoIcon className='hidden lg:inline-block' />
+        <div className='text-main-blue text-xl font-bold hidden md:inline-block lg:hidden'>
+          {commonStrings.brandName.toUpperCase()} -{' '}
+          {commonStrings.brandSlogan.toUpperCase()}
         </div>
         <div className='hidden lg:flex'>
           {categories.map((category) => (
@@ -54,9 +61,8 @@ const Header = () => {
           ))}
         </div>
       </div>
-      <div className='navbar-center hidden lg:flex'></div>
-      <div className='navbar-end'>
-        <LogoIcon className='lg:hidden' />
+      <div className='navbar-end flex lg:hidden'>
+        <LogoIcon />
       </div>
     </div>
   );

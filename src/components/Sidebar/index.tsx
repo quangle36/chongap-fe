@@ -3,6 +3,7 @@ import Layout from '../Layout';
 import HeaderMenu from './SidebarMenu';
 import Accordion from 'components/Accordion';
 import Footer from 'components/Footer';
+import BreakingNews from 'pages/Home/BreakingNews';
 import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { commonStrings } from 'translation/vi';
@@ -98,6 +99,7 @@ const Sidebar = () => {
         <div className='drawer-content flex flex-col'>
           <Header />
           <main className={'grow lg:mx-[400px]'}>
+            <BreakingNews />
             <Outlet />
           </main>
           <Footer />

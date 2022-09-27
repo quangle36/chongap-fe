@@ -5,7 +5,7 @@ const getDefaultConfig = () => {
   const jwt = getJwt();
   const authorizationHeader = jwt ? { Authorization: `Bearer ${jwt}` } : {};
   return {
-    baseURL: process.env.API_ENDPOINT,
+    baseURL: import.meta.env.VITE_API_ENDPOINT,
     headers: {
       'Content-Type': 'application/json',
       ...authorizationHeader,

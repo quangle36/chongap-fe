@@ -32,29 +32,27 @@ const BreakingNews = () => {
     };
   }, []);
   return (
-    <div className='flex items-center h-[40px] border mt-3'>
+    <div className='items-center h-[40px]  mt-3 border-t-[1px] border-b-[1px] hidden lg:flex'>
       <div className='flex'>
-        <div className='flex items-center justify-center bg-main-blue text-white px-1 min-w-[100px]'>
+        <div className='flex items-center justify-center bg-main-blue text-white px-1 min-w-[100px] font-semibold'>
           {commonStrings.news}
         </div>
         <div className='ml-w-0 h-0 border-t-[20px] border-b-[20px] border-l-[12px] border-solid border-l-main-blue border-b-transparent border-t-transparent '></div>
       </div>
 
-      <div className='flex items-center'>
-        <Marquee pauseOnHover gradient={false} speed={30}>
-          {breakingNews.map((item) => (
-            <Link
-              className='mr-4 flex items-center hover:text-black'
-              key={item.id}
-              to='/'
-            >
-              <FaAngleDoubleRight className='mr-1' color='orange' size={10} />
-              {item.title}
-            </Link>
-          ))}
-        </Marquee>
-      </div>
-      <div className='bg-main-blue text-white min-w-[100px] flex justify-center h-full items-center'>
+      <Marquee pauseOnHover gradient={false} speed={30}>
+        {breakingNews.map((item) => (
+          <Link
+            className='mr-4 flex items-center hover:text-black'
+            key={item.id}
+            to='/'
+          >
+            <FaAngleDoubleRight className='mr-1' color='orange' size={10} />
+            {item.title}
+          </Link>
+        ))}
+      </Marquee>
+      <div className='bg-main-blue text-white min-w-[100px] flex justify-center h-[40px] items-center font-semibold'>
         {time}
       </div>
     </div>

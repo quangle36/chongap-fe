@@ -92,6 +92,35 @@ const Sidebar = () => {
     },
   ];
 
+  const sideBarContent = () => {
+    return categories.map((category) => (
+      <Accordion
+        key={category.id}
+        title={category.name}
+        onToggleActive={() => {
+          setActiveId(category.id);
+        }}
+        active={activeId === category.id ? true : false}
+      >
+        {
+          <ul className='flex flex-col'>
+            {category.subCategories.map((subCategoriesItem) => {
+              const subCategoriesUrl = standardDistrict(subCategoriesItem);
+
+              return (
+                <li key={subCategoriesItem}>
+                  <Link to={`${category.url}/${subCategoriesUrl}`}>
+                    {subCategoriesItem}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        }
+      </Accordion>
+    ));
+  };
+
   return (
     <>
       <div className='drawer '>
@@ -119,34 +148,7 @@ const Sidebar = () => {
             <li>
               <Link to='/'>Trang chủ</Link>
             </li>
-
-            {categories.map((category) => (
-              <Accordion
-                key={category.id}
-                title={category.name}
-                onToggleActive={() => {
-                  setActiveId(category.id);
-                }}
-                active={activeId === category.id ? true : false}
-              >
-                {
-                  <ul className='flex flex-col'>
-                    {category.subCategories.map((subCategoriesItem) => {
-                      const subCategoriesUrl =
-                        standardDistrict(subCategoriesItem);
-
-                      return (
-                        <li key={subCategoriesItem}>
-                          <Link to={`${category.url}/${subCategoriesUrl}`}>
-                            {subCategoriesItem}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                }
-              </Accordion>
-            ))}
+            {sideBarContent()}
           </ul>
           {/* <HeaderMenu /> */}
         </div>

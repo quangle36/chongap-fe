@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Layout from 'components/Layout';
 import Sidebar from 'components/Sidebar';
 import { About, Contact, Home } from 'pages';
+import Error404 from 'pages/Error404';
 import Register from 'pages/Register';
 import SellList from 'pages/SellList';
 import SignIn from 'pages/SignIn';
@@ -25,6 +26,7 @@ function App() {
             <Route path='dat-tp-hcm'>
               <Route path=':districtId' element={<SellList />} />
             </Route>
+            <Route path='*' element={<Error404 />} />
           </Route>
         </Routes>
       </QueryClientProvider>

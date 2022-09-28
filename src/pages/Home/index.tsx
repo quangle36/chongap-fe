@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <div>
-      <BreakingNews />
+      {/* <BreakingNews /> */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { FaImages, FaStar } from 'react-icons/fa';
 interface Props {
   title: string;
   price: string;
-  area: string;
+  totalArea: number;
   location: string;
   date: string;
   numberOfImages: number;

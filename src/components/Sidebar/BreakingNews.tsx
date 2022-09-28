@@ -32,9 +32,9 @@ const BreakingNews = () => {
     };
   }, []);
   return (
-    <div className='items-center h-[40px]  mt-3 border-t-[1px] border-b-[1px] hidden lg:flex'>
+    <div className='items-center h-[40px]  mt-3 border-t-[1px] border-b-[1px] hidden lg:flex mb-8'>
       <div className='flex'>
-        <div className='flex items-center justify-center bg-main-blue text-white px-1 min-w-[100px] font-semibold'>
+        <div className='flex items-center justify-center bg-main-blue text-white px-1 min-w-[100px] font-medium'>
           {commonStrings.news}
         </div>
         <div className='ml-w-0 h-0 border-t-[20px] border-b-[20px] border-l-[12px] border-solid border-l-main-blue border-b-transparent border-t-transparent '></div>
@@ -52,7 +52,7 @@ const BreakingNews = () => {
           </Link>
         ))}
       </Marquee>
-      <div className='bg-main-blue text-white min-w-[100px] flex justify-center h-[40px] items-center font-semibold'>
+      <div className='bg-main-blue text-white min-w-[100px] flex justify-center h-[40px] items-center font-medium'>
         {time}
       </div>
     </div>

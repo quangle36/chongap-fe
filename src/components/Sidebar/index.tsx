@@ -1,9 +1,10 @@
 import Header from '../Header';
 import Layout from '../Layout';
+import LiveSupport from './LiveSupport';
 import HeaderMenu from './SidebarMenu';
 import Accordion from 'components/Accordion';
 import Footer from 'components/Footer';
-import BreakingNews from 'pages/Home/BreakingNews';
+import BreakingNews from 'components/Sidebar/BreakingNews';
 import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { commonStrings } from 'translation/vi';
@@ -129,7 +130,10 @@ const Sidebar = () => {
           <Header />
           <main className={'grow lg:mx-[400px]'}>
             <BreakingNews />
-            <Outlet />
+            <div className='flex justify-between'>
+              <Outlet />
+              <LiveSupport />
+            </div>
           </main>
           <Footer />
         </div>

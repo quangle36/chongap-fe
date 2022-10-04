@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaImages, FaStar } from 'react-icons/fa';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -19,7 +20,7 @@ const CardProduct = (props: Props) => {
   return (
     <Link
       to={`/details/${props.slug}`}
-      className='flex flex-col lg:flex-row-reverse lg:p-0 lg:m-8 p-4 lg:w-[694px] lg:h-[200px]'
+      className='flex flex-col lg:flex-row-reverse lg:p-0 lg:m-8 p-4 '
     >
       <h3 className='text-sm text-card-title line-clamp-2 font-bold lg:hidden'>
         <FaStar
@@ -30,11 +31,12 @@ const CardProduct = (props: Props) => {
       </h3>
       <div className='flex'>
         <div className='relative'>
-          <img
-            className='h-[90px] w-[120px] lg:h-[200px] lg:w-[200px] rounded-md'
+          <LazyLoadImage
+            className='h-[90px] w-[120px] lg:h-[200px] lg:w-[500px] rounded-md'
             id='image'
             src={props.mainImage}
-          ></img>
+            alt='avatar'
+          />
           <div className='absolute bottom-2 right-4 text-white flex items-center'>
             <FaImages className='fill-white mr-1' />
             <p className='text-sm'>{props.numberOfImages}</p>
@@ -42,7 +44,7 @@ const CardProduct = (props: Props) => {
         </div>
         <div
           id='details'
-          className='flex flex-col placeholder-gray-800 pl-8 justify-center lg:justify-start lg:w-[500px] '
+          className='flex flex-col placeholder-gray-800 pl-8 justify-center lg:justify-start'
         >
           <h3 className='text-sm text-card-title lg:line-clamp-2 font-bold hidden'>
             <FaStar

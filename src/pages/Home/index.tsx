@@ -1,18 +1,12 @@
-import BreakingNews from '../../components/Sidebar/BreakingNews';
-import CardProduct from 'components/CardProduct';
-import UnderlineLink from 'components/UnderlineLink';
 import HotEstates from 'pages/HotEstates/HotEstates';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
-function Home() {
-  // console.log(import.meta.env.VITE_API_ENDPOINT);
-
+const Home = () => {
   return (
-    <>
-      {/* <BreakingNews /> */}
+    <div className='w-full'>
       <HotEstates />
-    </>
+    </div>
   );
-}
+};
 
 export default Home;

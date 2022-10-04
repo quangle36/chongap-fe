@@ -1,6 +1,6 @@
 import CardProduct from 'components/CardProduct';
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate, Outlet } from 'react-router-dom';
+import { useParams, useNavigate, Outlet, useLocation } from 'react-router-dom';
 import PulseLoader from 'react-spinners/PulseLoader';
 import request from 'utils/request';
 
@@ -33,9 +33,9 @@ const SellList = () => {
   const [error, setError] = useState(undefined);
   const { districtId, abc } = useParams();
   const navigate = useNavigate();
-
+  const location = useLocation();
   useEffect(() => {
-    console.log(window.location.pathname);
+    // console.log(window.location.pathname);
     const getData = async () => {
       try {
         setIsLoading(true);
@@ -57,20 +57,20 @@ const SellList = () => {
     };
 
     getData();
-  }, [districtId, currentPage]);
+  }, [districtId, currentPage, location]);
 
   console.log(error);
   if (error) {
     return <div className='text-center text-2xl'>Something went wrong</div>;
   }
   return (
-    <div className='flex grow'>
-      <Outlet />
+    <>
+      {/* <Outlet /> */}
       {isLoading ? (
         <PulseLoader size={50} color='#4487C7' className='m-auto mt-52' />
       ) : (
-        <div className='flex flex-col '>
-          <div className='flex flex-col border-l-[1px] border-r-[1px] border-main-blue mr-4'>
+        <div className='flex flex-col'>
+          <div className='flex flex-col border-l-[1px] border-r-[1px] border-main-blue'>
             <div className='bg-main-blue text-white font-semibold lg:w-full py-2 px-8'>
               {title}
             </div>
@@ -92,7 +92,7 @@ const SellList = () => {
               </>
             ))}
           </div>
-          <div className='btn-group mt-4'>
+          {/* <div className='btn-group mt-4'>
             {Array.from(Array(totalPages).keys()).map((item) => {
               return (
                 <button
@@ -109,10 +109,10 @@ const SellList = () => {
                 </button>
               );
             })}
-          </div>
+          </div> */}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

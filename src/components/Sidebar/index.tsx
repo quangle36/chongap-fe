@@ -128,12 +128,8 @@ const Sidebar = () => {
         <input id='my-drawer' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content flex flex-col'>
           <Header />
-          <main className={'grow md:px-[200px] xl:px-[400px]'}>
-            <BreakingNews />
-            <div className='flex justify-between'>
-              <Outlet />
-              <LiveSupport />
-            </div>
+          <main className={'grow w-1/2 mx-auto'}>
+            <Outlet />
           </main>
           <Footer />
         </div>

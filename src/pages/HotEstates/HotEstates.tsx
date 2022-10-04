@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 import { commonStrings } from 'translation/vi';
 import request from 'utils/request';
 
@@ -15,25 +17,25 @@ const HotEstates = () => {
     getData();
   }, []);
 
-  const element = () => {
-    return (
-      <div className='h-2 w-2 rounded-full bg-green-500 opacity-75 mr-4'></div>
-    );
-  };
   return (
-    <div className='flex flex-col w-[300px] items-center mr-4 grow'>
-      <div className='bg-main-blue text-white font-semibold lg:w-full p-2 pl-8 flex'>
+    <div className='flex flex-col items-center mr-4'>
+      <div className='bg-main-blue text-white font-semibold lg:w-full p-2 pl-8 flex mb-4'>
         {commonStrings.hotEstates}
       </div>
       <div className='grid grid-cols-3 gap-4'>
         {data.map((item) => (
-          <div key={item._id} className='flex flex-col'>
-            <img src={item.photos[0]} />
-            <div className='line-clamp-2'>{item.title}</div>
+          <Link to='/' key={item._id} className='flex flex-col'>
+            <LazyLoadImage className='rounded-md' src={item.photos[0]} />
+            <div className='line-clamp-2 mt-2'>{item.title}</div>
 
-            <div>Diện tích {item.totalArea}m²</div>
-            <div> Giá {item.price}</div>
-          </div>
+            <div>
+              <span className='font-semibold'>Diện tích:</span> {item.totalArea}{' '}
+              m²
+            </div>
+            <div>
+              <span className='font-semibold'>Giá:</span> {item.price}
+            </div>
+          </Link>
         ))}
       </div>
     </div>

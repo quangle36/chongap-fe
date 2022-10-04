@@ -7,7 +7,7 @@ const LiveSupport = () => {
     );
   };
   return (
-    <div className='flex flex-col w-[300px] items-center'>
+    <div className='lg:flex flex-col items-center hidden min-w-[200px] '>
       <div className='bg-main-blue text-white font-semibold lg:w-full p-2 flex justify-center'>
         Hỗ Trợ Trực Tuyến
       </div>
@@ -16,7 +16,7 @@ const LiveSupport = () => {
           {element()}
 
           <div className='flex flex-col '>
-            <h4>Mr. Lê Minh Quang</h4>
+            <h4>Mr. Nguyễn Văn A</h4>
             <h5>0123456789</h5>
           </div>
         </div>
@@ -24,7 +24,7 @@ const LiveSupport = () => {
         <div className='flex items-center'>
           {element()}
           <div className='flex flex-col '>
-            <h4>Mr. Nguyễn Thanh Hải</h4>
+            <h4>Mr. Nguyễn Văn A</h4>
             <h5>0123456789</h5>
           </div>
         </div>

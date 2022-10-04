@@ -32,7 +32,7 @@ const BreakingNews = () => {
     };
   }, []);
   return (
-    <div className='items-center h-[40px]  mt-3 border-t-[1px] border-b-[1px] hidden lg:flex mb-8'>
+    <div className='items-center h-[40px]  mt-3 border-t-[1px] border-b-[1px] hidden lg:flex mb-8 min-w-full'>
       <div className='flex'>
         <div className='flex items-center justify-center bg-main-blue text-white px-1 min-w-[100px] font-medium'>
           {commonStrings.news}

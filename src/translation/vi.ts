@@ -6,4 +6,5 @@ export const commonStrings = {
   brandName: 'Vạn Phúc Thịnh',
   brandSlogan: 'Kênh Thông Tin Bất Động Sản Hàng Đầu',
   news: 'Tin tức',
+  hotEstates: 'Bất động sản nổi bật',
 };

@@ -128,7 +128,7 @@ const Sidebar = () => {
         <input id='my-drawer' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content flex flex-col'>
           <Header />
-          <main className={'grow lg:mx-[400px]'}>
+          <main className={'grow md:px-[200px] xl:px-[400px]'}>
             <BreakingNews />
             <div className='flex justify-between'>
               <Outlet />

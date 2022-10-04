@@ -1,6 +1,6 @@
 import CardProduct from 'components/CardProduct';
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Outlet } from 'react-router-dom';
 import PulseLoader from 'react-spinners/PulseLoader';
 import request from 'utils/request';
 
@@ -31,11 +31,11 @@ const SellList = () => {
   const [isLoading, setIsLoading] = useState(false);
   // const [searchParams, setSearchParams] = useSearchParams();
   const [error, setError] = useState(undefined);
-  const { districtId } = useParams();
+  const { districtId, abc } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(window.location.pathname.split('/')[1]);
+    console.log(window.location.pathname);
     const getData = async () => {
       try {
         setIsLoading(true);
@@ -65,6 +65,7 @@ const SellList = () => {
   }
   return (
     <div className='flex grow'>
+      <Outlet />
       {isLoading ? (
         <PulseLoader size={50} color='#4487C7' className='m-auto mt-52' />
       ) : (

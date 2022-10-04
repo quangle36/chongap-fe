@@ -15,10 +15,10 @@ interface Props {
 }
 
 const CardProduct = (props: Props) => {
-  console.log(`${window.location.pathname.split('/')[1]}`);
+  console.log(`${window.location.origin}`);
   return (
     <Link
-      to={`${window.location.pathname}/${props.slug}`}
+      to={`/details/${props.slug}`}
       className='flex flex-col lg:flex-row-reverse lg:p-0 lg:m-8 p-4 lg:w-[694px] lg:h-[200px]'
     >
       <h3 className='text-sm text-card-title line-clamp-2 font-bold lg:hidden'>

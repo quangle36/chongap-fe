@@ -1,12 +1,13 @@
-import { getJwt } from './authUtils';
+import { getToken } from './authUtils';
 import axios from 'axios';
 
 const getDefaultConfig = () => {
-  const jwt = getJwt();
+  const jwt = getToken();
   const authorizationHeader = jwt ? { Authorization: `Bearer ${jwt}` } : {};
   return {
     baseURL: import.meta.env.VITE_API_ENDPOINT,
     headers: {
+      baseURL: import.meta.env.VITE_API_ENDPOINT,
       'Content-Type': 'application/json',
       ...authorizationHeader,
     },

@@ -129,7 +129,9 @@ const Sidebar = () => {
         <div className='drawer-content flex flex-col'>
           <Header />
           <main className={'grow w-1/2 mx-auto'}>
-            <Outlet />
+            <div className='flex justify-center w-full h-full'>
+              <Outlet />
+            </div>
           </main>
           <Footer />
         </div>

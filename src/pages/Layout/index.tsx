@@ -9,7 +9,7 @@ function Layout() {
   // console.log(import.meta.env.VITE_API_ENDPOINT);
 
   return (
-    <div className='flex'>
+    <div className='flex w-full h-full'>
       <Outlet />
       <LiveSupport />
     </div>

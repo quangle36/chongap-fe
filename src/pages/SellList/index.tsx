@@ -69,7 +69,7 @@ const SellList = () => {
       {isLoading ? (
         <PulseLoader size={50} color='#4487C7' className='m-auto mt-52' />
       ) : (
-        <div className='flex flex-col'>
+        <div className='flex flex-col mr-4'>
           <div className='flex flex-col border-l-[1px] border-r-[1px] border-main-blue'>
             <div className='bg-main-blue text-white font-semibold lg:w-full py-2 px-8'>
               {title}

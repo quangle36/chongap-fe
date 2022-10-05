@@ -67,10 +67,10 @@ const Header = () => {
         </div>
         <div className='navbar-end hidden lg:flex'>
           <div className='mr-4'>
-            <UnderlineLink to='signin'>Đăng nhập</UnderlineLink>
+            <UnderlineLink to='signin'>{commonStrings.signIn}</UnderlineLink>
           </div>
 
-          <UnderlineLink to='register'>Đăng kí</UnderlineLink>
+          <UnderlineLink to='signup'>{commonStrings.signUp}</UnderlineLink>
         </div>
         <div className='navbar-end flex lg:hidden'>
           <LogoIcon />

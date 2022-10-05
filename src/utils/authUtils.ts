@@ -1,6 +1,6 @@
 import jwtDecode from 'jwt-decode';
 
-const JWT = 'jwt';
+const TOKEN = 'token';
 const USER = 'user';
 
 interface MyToken {
@@ -8,16 +8,16 @@ interface MyToken {
   exp: number;
 }
 
-export function storeJwt(jwt: string) {
-  localStorage.setItem(JWT, jwt);
+export function storeToken(jwt: string) {
+  localStorage.setItem(TOKEN, jwt);
 }
 
-export function getJwt() {
-  return localStorage.getItem(JWT);
+export function getToken() {
+  return localStorage.getItem(TOKEN) || '""';
 }
 
-export function removeJwt() {
-  return localStorage.removeItem(JWT);
+export function removeToken() {
+  return localStorage.removeItem(TOKEN);
 }
 
 export function storeUser(user: any) {
@@ -34,11 +34,11 @@ export function removeUser() {
 }
 
 export function isExpiredToken() {
-  const jwt = getJwt();
-  if (!jwt) {
+  const token = getToken();
+  if (!token) {
     return true;
   }
-  const decodedJwt = jwtDecode<MyToken>(jwt);
+  const decodedJwt = jwtDecode<MyToken>(token);
   const currentTime = Date.now() / 1000;
   return decodedJwt.exp < currentTime;
 }

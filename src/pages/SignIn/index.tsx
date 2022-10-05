@@ -7,6 +7,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { commonStrings } from 'translation/vi';
 import api from 'utils/api';
+import { storeToken } from 'utils/authUtils';
 import { regex } from 'utils/regex';
 import request from 'utils/request';
 
@@ -26,6 +27,12 @@ const SignIn = () => {
       const response = await api.post('/v1/auth/login', data);
       console.log(response);
       if (response) {
+        const token = {
+          access_token: response.data.token.accessToken,
+          refresh_token: response.data.token.refreshToken,
+        };
+        console.log(token);
+        storeToken(token);
         navigate('/');
       }
     } catch (error: any) {

@@ -4,12 +4,12 @@ const TOKEN = 'token';
 const USER = 'user';
 
 interface MyToken {
-  name: string;
-  exp: number;
+  access_token: string;
+  refresh_token: string;
 }
 
-export function storeToken(jwt: string) {
-  localStorage.setItem(TOKEN, jwt);
+export function storeToken(token: MyToken) {
+  localStorage.setItem(TOKEN, JSON.stringify(token));
 }
 
 export function getToken() {

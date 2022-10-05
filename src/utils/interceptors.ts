@@ -9,6 +9,7 @@ import axios, {
 export const BASE_URL = import.meta.env.VITE_API_ENDPOINT;
 
 const onRequest = (config: AxiosRequestConfig): AxiosRequestConfig => {
+  console.log('config', config);
   const token = JSON.parse(getToken());
   if (config.headers) {
     config.headers['Authorization'] = `Bearer ${token.access_token}`;

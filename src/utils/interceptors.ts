@@ -1,4 +1,4 @@
-import { getToken, storeToken } from './authUtils';
+import { getToken, getUser, storeToken } from './authUtils';
 import axios, {
   AxiosError,
   AxiosInstance,
@@ -33,15 +33,21 @@ const onResponseError = async (error: AxiosError<any>): Promise<AxiosError> => {
       error.response.data.message === 'jwt expired'
     ) {
       const storedToken = JSON.parse(getToken());
-
+      const storedUser = getUser();
       try {
         const rs = await axios.post(`${BASE_URL}/v1/auth/refresh-token`, {
-          refresh_token: storedToken.refresh_token,
+          refreshToken: storedToken.refresh_token,
+          email: storedUser.email,
         });
 
-        const { token } = rs.data;
+        const { accessToken, refreshToken } = rs.data;
 
-        storeToken(JSON.stringify(token));
+        const token = {
+          access_token: accessToken,
+          refresh_token: refreshToken,
+        };
+
+        storeToken(token);
         // localStorage.setItem('token', JSON.stringify(token));
         // localStorage.setItem('user', JSON.stringify(user));
 

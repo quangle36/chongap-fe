@@ -36,7 +36,7 @@ const SignIn = () => {
         navigate('/');
       }
     } catch (error: any) {
-      console.log(error.response.status);
+      // console.log(error.response.status);
     }
   };
 
